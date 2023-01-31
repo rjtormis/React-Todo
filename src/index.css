@@ -23,7 +23,9 @@ footer {
     bottom: 0;
     width: 100%;
 }
-
+.isActive {
+    font-weight: bold;
+}
 
 
 /* SPIN ANIMATION */
