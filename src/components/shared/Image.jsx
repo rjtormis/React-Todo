@@ -6,7 +6,7 @@ function Image({ className, src, width, height }) {
 Image.propTypes = {
 	className: PropTypes.string,
 	src: PropTypes.string,
-	width: PropTypes.string,
-	height: PropTypes.string,
+	width: PropTypes.number,
+	height: PropTypes.number,
 };
 export default Image;
