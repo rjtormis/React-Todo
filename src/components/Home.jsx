@@ -16,7 +16,7 @@ function Home() {
 					<p>
 						A Simple React Todo Application that performs basic <strong>CRUD</strong> on tasks. The main purpose of this
 						small project is to broaden my skillset with regards to Front-end Development by using JavaScript Framework,
-						Sepcifically React.
+						Specifically React.
 					</p>
 					<div className="meme d-flex justify-content-center">
 						<Image src={meme}></Image>
