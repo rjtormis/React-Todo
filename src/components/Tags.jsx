@@ -1,42 +1,44 @@
-import { FcHighPriority, FcLowPriority, FcMediumPriority } from 'react-icons/fc';
-function Tags() {
+import PropTypes from 'prop-types';
+
+import { FcReading, FcWorkflow } from 'react-icons/fc';
+
+function Tags({ select }) {
+	//@todo - Move to useContext Hook!
+	const handleTags = (e) => {
+		select(e.target.value);
+	};
 	return (
-		<div className="priority mt-3 text-center ">
+		<div className="Tags mt-3 text-center">
 			<div className="form-check form-check-inline">
 				<input
-					class="form-check-input"
+					onClick={handleTags}
+					className="form-check-input"
 					type="radio"
-					name="inlineRadioOptions"
-					id="highPriority"
-					value="High Priority"
+					name="New[tags]"
+					id="Personal"
+					value="Personal"
 				/>
-				<label class="form-check-label d-flex" for="highPriority">
-					<FcHighPriority size={25} />
-					<h5 className="mx-2"> High Priority</h5>
+				<label className="form-check-label d-flex" htmlFor="Personal">
+					<FcReading size={25} />
+					<h5 className="mx-2"> Personal</h5>
 				</label>
 			</div>
 			<div className="form-check form-check-inline">
-				<input
-					class="form-check-input"
-					type="radio"
-					name="inlineRadioOptions"
-					id="mediumPriority"
-					value="Medium Priority"
-				/>
-				<label class="form-check-label d-flex" for="mediumPriority">
-					<FcMediumPriority size={25} />
-					<h5 className="mx-2"> Medium Priority</h5>
-				</label>
-			</div>
-			<div className="form-check form-check-inline">
-				<input class="form-check-input" type="radio" name="inlineRadioOptions" id="lowPriority" value="Low Priority" />
-				<label class="form-check-label d-flex" for="lowPriority">
-					<FcLowPriority size={25} />
-					<h5 className="mx-2"> Low Priority</h5>
+				<input onClick={handleTags} className="form-check-input" type="radio" name="New[tags]" id="Work" value="Work" />
+				<label className="form-check-label d-flex" htmlFor="Work">
+					<FcWorkflow size={25} />
+					<h5 className="mx-2">Work</h5>
 				</label>
 			</div>
 		</div>
 	);
 }
+
+Tags.defaultProps = {
+	select: () => null,
+};
+Tags.propTypes = {
+	select: PropTypes.func,
+};
 
 export default Tags;
