@@ -1,6 +1,6 @@
-import Tags from './Tags';
+import Tags from './Priority';
 import NewTaskForm from './NewTaskForm';
-function New() {
+function New({ create }) {
 	return (
 		<>
 			<div className="newTask mt-3 text-center">
@@ -8,7 +8,7 @@ function New() {
 			</div>
 			<div className="row">
 				<div className="col-7 offset-3">
-					<NewTaskForm />
+					<NewTaskForm create={create} />
 				</div>
 			</div>
 		</>
