@@ -12,16 +12,69 @@ html{
     padding: 0;
     margin-right: 0;
 }
-.root{
+#root{
     display: flex;
     flex-direction: column;
+    height: 100vh;
+}
+.navbar{
+    height: 60px;
 }
 
+
+.container{
+    --container-height: calc(100vh - 120px);
+    height: var(--container-height);
+}
+.task-container{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 1rem;
+    padding: 1rem;
+    height: calc(var(--container-height) - 80px);
+    overflow-y: auto;
+}
+.card-component{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 200px;
+    background: rgba( 33, 37, 41, 0.8 );
+box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+backdrop-filter: blur( 10.5px );
+-webkit-backdrop-filter: blur( 10.5px );
+border-radius: 10px;
+border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+    .cardc-type{
+        margin:5px;
+        display: flex;
+        justify-content: center;
+    }
+    .cardc-title{
+        margin-left: 10px;
+    }
+    .cardc-body{
+        margin-left: 10px;
+
+    }
+        .task-details{
+            
+        }
+        .task-buttons{
+            width:150px;
+            display: flex;
+            justify-content: space-around;
+            position: absolute;
+            bottom: 20px;
+            right: 10px;
+        }
 
 footer {
     position: absolute;
     bottom: 0;
     width: 100%;
+    height: 60px;
 }
 .isActive {
     font-weight: bold;
