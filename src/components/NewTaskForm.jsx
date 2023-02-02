@@ -28,7 +28,7 @@ function NewTaskForm({ create }) {
 		create(newTask);
 	};
 	const printMe = (e) => {
-		// console.log(newTask);
+		console.log(tags);
 	};
 
 	return (
