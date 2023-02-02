@@ -1,15 +1,14 @@
+import Card from './shared/Card';
 function All({ data }) {
 	// @todo - Add styles
 	return (
-		<div>
+		<div className="mt-3">
 			<h1>All Task!</h1>
-			<ul>
+			<div className="task-container">
 				{data.map((item) => (
-					<li key={item.id}>
-						{item.task}, {item.priority} , {item.tags} , {item.date}
-					</li>
+					<Card key={item.id} task={item.task} tags={item.tags} priority={item.priority} date={item.date} />
 				))}
-			</ul>
+			</div>
 		</div>
 	);
 }
